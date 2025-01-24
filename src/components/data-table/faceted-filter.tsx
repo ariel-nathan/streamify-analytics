@@ -40,7 +40,9 @@ export default function FacetedFilter<TData, TValue>({
       <SelectContent>
         <SelectItem value={'all'}>All</SelectItem>
         {sortedUniqueValues.map((artist) => (
-          <SelectItem value={artist}>{artist}</SelectItem>
+          <SelectItem key={artist} value={artist}>
+            {artist}
+          </SelectItem>
         ))}
       </SelectContent>
     </Select>
