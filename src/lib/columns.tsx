@@ -1,4 +1,5 @@
 import { SongPlay } from '@/components/dashboard/recent-streams-table'
+import FacetedFilter from '@/components/data-table/faceted-filter'
 import { DataTableColumnHeader } from '@/components/data-table/header'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -44,10 +45,15 @@ export const columns: ColumnDef<SongPlay>[] = [
     ),
   },
   {
+    id: 'artist',
     accessorKey: 'artist',
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Artist" />
+      <div className="flex items-center gap-4">
+        <FacetedFilter column={column} title="Artist" />
+        <DataTableColumnHeader column={column} />
+      </div>
     ),
+    enableColumnFilter: true,
   },
   {
     accessorKey: 'date',
