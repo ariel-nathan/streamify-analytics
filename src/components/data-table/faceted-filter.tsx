@@ -22,8 +22,6 @@ export default function FacetedFilter<TData, TValue>({
   title,
   className,
 }: DataTableColumnHeaderProps<TData, TValue>) {
-  // TODO: Create a function that will apply our filters when we change the value in the select
-
   const sortedUniqueValues = React.useMemo(() => {
     return Array.from(column.getFacetedUniqueValues().keys())
       .sort()
